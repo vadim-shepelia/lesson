@@ -1,20 +1,34 @@
-
 let numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели ?", "");
-const personalMovieDB =
-  {
-    count:numberOfFilms,
-    movies:{},
-    actors:{},
-    genres:[],
-    privat:false
-  };
-let lastFilm = prompt("Один из последних просмотреных фильмов?", "");
-let HowLike = +prompt("Насколько оценете его ?", "1-5") ;
-let lastFilm1 = prompt("Один из последних просмотреных фильмов?", "");
-let HowLike1 = +prompt("Насколько оценете его ?", "1-5") ;
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false
+};
 
-//не дбавлять данніе в обьект через точку , может призвести к багам 
-personalMovieDB.movies[lastFilm] = HowLike; 
-personalMovieDB.movies[lastFilm1] = HowLike1;
+for (let i = 1; i <= 2; i++) {
+  let lastFilm = prompt("Один из последних просмотреных фильмов?", "");
+  let HowLike = prompt("Насколько оценете его ?", "");
+  if (lastFilm != "" && HowLike != "" && lastFilm != null && HowLike != null && lastFilm.length) {
+    personalMovieDB.movies[lastFilm] = HowLike;
+  } else {
+    --i;
+  }
+}
 
-console.log(personalMovieDB);
+
+
+
+
+
+
+if (personalMovieDB.count < 10) {
+  alert("просмотрено довольно мало фильмов");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+  alert("вы класический зритель");
+} else if (personalMovieDB.count > 30) {
+  alert("вы киноман");
+} else {
+  alert("Произошла ошибка");
+}
