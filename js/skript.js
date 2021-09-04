@@ -1,3 +1,5 @@
+"user strict";
+
 let numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели ?", "");
 const personalMovieDB = {
   count: numberOfFilms,
@@ -7,7 +9,7 @@ const personalMovieDB = {
   privat: false
 };
 
-for (let i = 1; i <= 2; i++) {
+/*for (let i = 1; i <= 2; i++) {
   let lastFilm = prompt("Один из последних просмотреных фильмов?", "");
   let HowLike = prompt("Насколько оценете его ?", "");
   if (lastFilm != "" && HowLike != "" && lastFilm != null && HowLike != null && lastFilm.length) {
@@ -15,13 +17,19 @@ for (let i = 1; i <= 2; i++) {
   } else {
     --i;
   }
+}*/
+let i = 0;
+while (i <= 1) {
+  const lastFilm = prompt("Один из последних просмотреных фильмов?", "");
+  const HowLike = prompt("Насколько оценете его ?", "");
+  if (lastFilm != "" && HowLike != "" && lastFilm != null && HowLike != null && lastFilm.length) {
+    personalMovieDB.movies[lastFilm] = HowLike;
+    i++;
+  } else {
+    --i;
+  }
+
 }
-
-
-
-
-
-
 
 if (personalMovieDB.count < 10) {
   alert("просмотрено довольно мало фильмов");
