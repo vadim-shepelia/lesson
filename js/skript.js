@@ -9,39 +9,15 @@ const personalMovieDB = {
   privat: false
 };
 
-/*for (let i = 1; i <= 2; i++) {
+for (let i = 1; i <= 2; i++) {
   let lastFilm = prompt("Один из последних просмотреных фильмов?", "");
   let HowLike = prompt("Насколько оценете его ?", "");
   if (lastFilm != "" && HowLike != "" && lastFilm != null && HowLike != null && lastFilm.length) {
     personalMovieDB.movies[lastFilm] = HowLike;
-  } else {
-    --i;
-  }
-}*/
-
-/*let i = 0;
-while (i <= 1) {
-  const lastFilm = prompt("Один из последних просмотреных фильмов?", "");
-  const HowLike = prompt("Насколько оценете его ?", "");
-  if (lastFilm != "" && HowLike != "" && lastFilm != null && HowLike != null && lastFilm.length) {
-    personalMovieDB.movies[lastFilm] = HowLike;
-    i++;
-  } else {
-    --i;
-  }
-}*/
-let i = 0;
-do {
-  let lastFilm = prompt("Один из последних просмотреных фильмов?", "");
-  let HowLike = prompt("Насколько оценете его ?", "");
-  if (lastFilm != "" && HowLike != "" && lastFilm != null && HowLike != null && lastFilm.length) {
-    personalMovieDB.movies[lastFilm] = HowLike;
-    ++i;
   } else {
     --i;
   }
 }
-while(i <= 2);
 
 
 if (personalMovieDB.count < 10) {
