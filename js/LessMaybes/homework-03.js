@@ -237,3 +237,5 @@ const account = {
    */
   getTransactionTotal(type) {},
 };
+
+
